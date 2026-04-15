@@ -625,6 +625,14 @@ func NewKeyboardButton(text string) KeyboardButton {
 	}
 }
 
+// NewKeyboardButtonStyled creates a regular keyboard button with explicit style.
+func NewKeyboardButtonStyled(text, style string) KeyboardButton {
+	return KeyboardButton{
+		Text:  text,
+		Style: style,
+	}
+}
+
 // NewKeyboardButtonWebApp creates a keyboard button with text
 // which goes to a WebApp.
 func NewKeyboardButtonWebApp(text string, webapp WebAppInfo) KeyboardButton {
@@ -686,6 +694,16 @@ func NewInlineKeyboardButtonData(text, data string) InlineKeyboardButton {
 	return InlineKeyboardButton{
 		Text:         text,
 		CallbackData: &data,
+	}
+}
+
+// NewInlineKeyboardButtonDataStyled creates an inline keyboard button with text,
+// callback data and explicit style.
+func NewInlineKeyboardButtonDataStyled(text, data, style string) InlineKeyboardButton {
+	return InlineKeyboardButton{
+		Text:         text,
+		CallbackData: &data,
+		Style:        style,
 	}
 }
 
